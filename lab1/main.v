@@ -100,16 +100,7 @@ always@(posedge clk, posedge rst)
         endcase
       question_2: begin
         if(btnD)
-          case(sw_S)
-            2'b00:
-              LED[0] <= 1;
-            2'b01:
-              LED[2] <= 1;
-            2'b10:
-              LED[4] <= 1;
-            2'b11:
-              LED[6] <= 1;
-          endcase
+          LED[sw_S * 2] <= 1;
         else
           LED <= 8'd0;
       end
