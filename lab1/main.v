@@ -114,14 +114,14 @@ always@(posedge clk, posedge rst)
           LED <= 8'd0;
       end
       question_3: begin
-          LED[0] <= (wantS == 1)? 0 : 1;
-          LED[1] <= (wantS > 1)? 1 : 0;
-          LED[2] <= (wantE == 1)? 0 : 1;
-          LED[3] <= (wantE > 1)? 1 : 0;
-          LED[4] <= (wantN == 1)? 0 : 1;
-          LED[5] <= (wantN > 1)? 1 : 0;
-          LED[6] <= (wantW == 1)? 0 : 1;
-          LED[7] <= (wantW > 1)? 1 : 0;
+          LED[0] <= (wantS == 1)? 1 : 0;
+          LED[1] <= (wantS  > 1)? 0 : 1;
+          LED[2] <= (wantE == 1)? 1 : 0;
+          LED[3] <= (wantE  > 1)? 0 : 1;
+          LED[4] <= (wantN == 1)? 1 : 0;
+          LED[5] <= (wantN  > 1)? 0 : 1;
+          LED[6] <= (wantW == 1)? 1 : 0;
+          LED[7] <= (wantW  > 1)? 0 : 1;
       end
     endcase
   end
