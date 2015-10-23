@@ -65,7 +65,7 @@ reg [2:0] q1_cont;
 
 wire [1:0] sw_S, sw_E, sw_N, sw_W;
 wire argueS, argueE, argueN, argueW;
-assign argueS = ((( 2'b00 != sw_E ) && ( 2'b00 != sw_N ) && ( 2'b00 != sw_W )) || 
+assign argueS =  ((( 2'b00 != sw_E ) && ( 2'b00 != sw_N ) && ( 2'b00 != sw_W )) || 
                   (( 2'b00 != sw_S ) && ( 2'b00 != sw_N ) && ( 2'b00 != sw_W )) ||
                   (( 2'b00 != sw_E ) && ( 2'b00 != sw_S ) && ( 2'b00 != sw_W )) ||
                   (( 2'b00 != sw_E ) && ( 2'b00 != sw_N ) && ( 2'b00 != sw_S )) )? 1:0;
