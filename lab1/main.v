@@ -1,24 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    15:01:31 10/22/2015 
-// Design Name: 
-// Module Name:    yo 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
-module yo( clk, rst, LED, sw, btnD, btnR, btnU, btnL);
+module main( clk, rst, LED, sw, btnD, btnR, btnU, btnL);
 
 input clk, rst, btnD, btnR, btnU, btnL;
 input [7:0] sw;
@@ -44,22 +25,17 @@ parameter question_1 = 2'b00;
 parameter question_2 = 2'b01;
 parameter question_3 = 2'b10;
 always@(posedge clk, posedge rst)
-  if(rst) begin
+  if(rst)
     state <= question_1;
-  end
-  else if(tri_cont) begin
+  else if(tri_cont)
     case(state)
-      2'b00: begin
+      2'b00:
         state <= (q1_state == 2'b10)? question_2 : question_1;
-      end
-      2'b01: begin
+      2'b01:
         state <= (sw[7] == 1)? question_3 : question_2;
-      end
-      2'b10: begin
+      2'b10:
         state <= question_3;
-      end
     endcase
-  end
 
 reg [2:0] q1_cont;
 
@@ -86,7 +62,7 @@ always@(posedge clk, posedge rst)
           2'b01: begin
             LED <= LED << 1;
             q1_cont <= q1_cont + 1;
-            q1_state <= (q1_cont == 3'b111)? 2'b10 : q1_state;
+            q1_state <= (q1_cont == 3'b110)? 2'b10 : q1_state;
           end
           2'b10: begin
             LED <= 8'hFF;
@@ -99,7 +75,7 @@ always@(posedge clk, posedge rst)
         endcase
       question_2: begin
         if(btnD)
-          LED[sw_S * 2] <= 1;
+          LED[sw[1:0] * 2] <= 1;
         else
           LED <= 8'd0;
       end
