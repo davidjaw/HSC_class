@@ -63,17 +63,11 @@ always@(posedge clk, posedge rst)
 
 reg [2:0] q1_cont;
 
-wire [1:0] sw_S, sw_E, sw_N, sw_W;
-assign sw_S = sw[1:0];
-assign sw_E = sw[3:2];
-assign sw_N = sw[5:4];
-assign sw_W = sw[7:6];
-
 wire [2:0] wantS, wantE, wantN, wantW;
-assign wantS = (btnD && (sw_S == 2'b00)) + (btnR && (sw_E == 2'b00)) + (btnU && (sw_N == 2'b00)) + (btnL && (sw_W == 2'b00));
-assign wantE = (btnD && (sw_S == 2'b01)) + (btnR && (sw_E == 2'b01)) + (btnU && (sw_N == 2'b01)) + (btnL && (sw_W == 2'b01));
-assign wantN = (btnD && (sw_S == 2'b10)) + (btnR && (sw_E == 2'b10)) + (btnU && (sw_N == 2'b10)) + (btnL && (sw_W == 2'b10));
-assign wantW = (btnD && (sw_S == 2'b11)) + (btnR && (sw_E == 2'b11)) + (btnU && (sw_N == 2'b11)) + (btnL && (sw_W == 2'b11));
+assign wantS = (btnD && (sw[1:0] == 2'b00)) + (btnR && (sw[3:2] == 2'b00)) + (btnU && (sw[5:4] == 2'b00)) + (btnL && (sw[7:6] == 2'b00));
+assign wantE = (btnD && (sw[1:0] == 2'b01)) + (btnR && (sw[3:2] == 2'b01)) + (btnU && (sw[5:4] == 2'b01)) + (btnL && (sw[7:6] == 2'b01));
+assign wantN = (btnD && (sw[1:0] == 2'b10)) + (btnR && (sw[3:2] == 2'b10)) + (btnU && (sw[5:4] == 2'b10)) + (btnL && (sw[7:6] == 2'b10));
+assign wantW = (btnD && (sw[1:0] == 2'b11)) + (btnR && (sw[3:2] == 2'b11)) + (btnU && (sw[5:4] == 2'b11)) + (btnL && (sw[7:6] == 2'b11));
 
 always@(posedge clk, posedge rst)
   if(rst) begin
