@@ -30,7 +30,7 @@ always@(posedge clk, posedge rst)
   else if(tri_cont)
     case(state)
       2'b00:
-        state <= (q1_state == 2'b10)? question_2 : question_1;
+        state <= (q1_state == 2'b10 || q1_state == 2'b11)? question_2 : question_1;
       2'b01:
         state <= (sw[7] == 1)? question_3 : question_2;
       2'b10:
@@ -51,28 +51,8 @@ always@(posedge clk, posedge rst)
     q1_cont <= 3'b0;
     LED <= 8'b00000000;
   end
-  else if(tri_cont) begin
+  else if(state == question_2) begin
     case(state)
-      question_1:
-        case(q1_state)
-          2'b00: begin
-            LED <= 8'd1;
-            q1_state <= q1_state + 1;
-          end
-          2'b01: begin
-            LED <= LED << 1;
-            q1_cont <= q1_cont + 1;
-            q1_state <= (q1_cont == 3'b110)? 2'b10 : q1_state;
-          end
-          2'b10: begin
-            LED <= 8'hFF;
-            q1_state <= q1_state + 1;
-          end
-          2'b11: begin
-            LED <= 8'd0;
-            q1_state <= 2'd0;
-          end
-        endcase
       question_2: begin
         if(btnD)
           LED[sw[1:0] * 2] <= 1;
@@ -81,13 +61,34 @@ always@(posedge clk, posedge rst)
       end
       question_3: begin
           LED[0] <= (wantS == 1)? 1 : 0;
-          LED[1] <= (wantS  > 1)? 0 : 1;
+          LED[1] <= (wantS  > 1)? 1 : 0;
           LED[2] <= (wantE == 1)? 1 : 0;
-          LED[3] <= (wantE  > 1)? 0 : 1;
+          LED[3] <= (wantE  > 1)? 1 : 0;
           LED[4] <= (wantN == 1)? 1 : 0;
-          LED[5] <= (wantN  > 1)? 0 : 1;
+          LED[5] <= (wantN  > 1)? 1 : 0;
           LED[6] <= (wantW == 1)? 1 : 0;
-          LED[7] <= (wantW  > 1)? 0 : 1;
+          LED[7] <= (wantW  > 1)? 1 : 0;
+      end
+    endcase
+  end
+  else if(tri_cont) begin
+    case(q1_state)
+      2'b00: begin
+        LED <= 8'd1;
+        q1_state <= q1_state + 1;
+      end
+      2'b01: begin
+        LED <= LED << 1;
+        q1_cont <= q1_cont + 1;
+        q1_state <= (q1_cont == 3'b110)? 2'b10 : q1_state;
+      end
+      2'b10: begin
+        LED <= 8'hFF;
+        q1_state <= q1_state + 1;
+      end
+      2'b11: begin
+        LED <= 8'd0;
+        q1_state <= 2'b11;
       end
     endcase
   end
