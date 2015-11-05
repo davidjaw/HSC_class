@@ -1,0 +1,29 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Nov 05 10:17:41 2015
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "Y9" LEVEL 1;
+COMP "btnD" LOCATE = SITE "R16" LEVEL 1;
+COMP "btnL" LOCATE = SITE "N15" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "T22" LEVEL 1;
+COMP "btnR" LOCATE = SITE "R18" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "T21" LEVEL 1;
+COMP "LED<2>" LOCATE = SITE "U22" LEVEL 1;
+COMP "btnU" LOCATE = SITE "T18" LEVEL 1;
+COMP "LED<3>" LOCATE = SITE "U21" LEVEL 1;
+COMP "LED<4>" LOCATE = SITE "V22" LEVEL 1;
+COMP "LED<5>" LOCATE = SITE "W22" LEVEL 1;
+COMP "LED<6>" LOCATE = SITE "U19" LEVEL 1;
+COMP "LED<7>" LOCATE = SITE "U14" LEVEL 1;
+COMP "sw<0>" LOCATE = SITE "F22" LEVEL 1;
+COMP "sw<1>" LOCATE = SITE "G22" LEVEL 1;
+COMP "sw<2>" LOCATE = SITE "H22" LEVEL 1;
+COMP "sw<3>" LOCATE = SITE "F21" LEVEL 1;
+COMP "sw<4>" LOCATE = SITE "H19" LEVEL 1;
+COMP "sw<5>" LOCATE = SITE "H18" LEVEL 1;
+COMP "sw<6>" LOCATE = SITE "H17" LEVEL 1;
+COMP "sw<7>" LOCATE = SITE "M15" LEVEL 1;
+COMP "rst" LOCATE = SITE "P16" LEVEL 1;
+SCHEMATIC END;
+

@@ -1,0 +1,499 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> Reading design: main.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "main.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "main"
+Output Format                      : NGC
+Target Device                      : xc7z020-3-clg484
+
+---- Source Options
+Top Module Name                    : main
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Programing\Class\HSC_class\hw1\main.v" into library work
+Parsing module <main>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <main>.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 17: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 18: Result of 32-bit expression is truncated to fit in 27-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 63: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 64: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 65: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 66: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 67: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 68: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 69: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 70: Result of 32-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 78: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 82: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "D:\Programing\Class\HSC_class\hw1\main.v" Line 87: Result of 3-bit expression is truncated to fit in 2-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <main>.
+    Related source file is "D:\Programing\Class\HSC_class\hw1\main.v".
+        question_1 = 2'b00
+        question_2 = 2'b01
+        question_3 = 2'b10
+    Found 27-bit register for signal <cont>.
+    Found 2-bit register for signal <state>.
+    Found 2-bit register for signal <q1_state>.
+    Found 3-bit register for signal <q1_cont>.
+    Found 8-bit register for signal <LED>.
+    Found 1-bit register for signal <tri_cont>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 28-bit adder for signal <n0201[27:0]> created at line 18.
+    Found 2-bit adder for signal <n0204[1:0]> created at line 43.
+    Found 2-bit adder for signal <n0213[1:0]> created at line 44.
+    Found 2-bit adder for signal <n0222[1:0]> created at line 45.
+    Found 2-bit adder for signal <n0231[1:0]> created at line 46.
+    Found 3-bit adder for signal <q1_cont[2]_GND_1_o_add_72_OUT> created at line 82.
+    Found 2-bit adder for signal <q1_state[1]_GND_1_o_add_75_OUT> created at line 87.
+    Found 3-bit adder for signal <_n0290> created at line 42.
+    Found 3-bit adder for signal <wantS> created at line 42.
+    Found 3-bit adder for signal <_n0292> created at line 42.
+    Found 3-bit adder for signal <wantE> created at line 42.
+    Found 3-bit adder for signal <_n0294> created at line 42.
+    Found 3-bit adder for signal <wantN> created at line 42.
+    Found 3-bit adder for signal <_n0296> created at line 42.
+    Found 3-bit adder for signal <wantW> created at line 42.
+    Found 2-bit 4-to-1 multiplexer for signal <q1_state[1]_PWR_1_o_wide_mux_77_OUT> created at line 75.
+    Found 3-bit comparator greater for signal <GND_1_o_wantS[2]_LessThan_54_o> created at line 64
+    Found 3-bit comparator greater for signal <GND_1_o_wantE[2]_LessThan_58_o> created at line 66
+    Found 3-bit comparator greater for signal <GND_1_o_wantN[2]_LessThan_62_o> created at line 68
+    Found 3-bit comparator greater for signal <GND_1_o_wantW[2]_LessThan_66_o> created at line 70
+    Summary:
+	inferred  15 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+	inferred   9 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <main> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 15
+ 2-bit adder                                           : 5
+ 28-bit adder                                          : 1
+ 3-bit adder                                           : 9
+# Registers                                            : 5
+ 1-bit register                                        : 1
+ 2-bit register                                        : 1
+ 27-bit register                                       : 1
+ 3-bit register                                        : 1
+ 8-bit register                                        : 1
+# Comparators                                          : 4
+ 3-bit comparator greater                              : 4
+# Multiplexers                                         : 9
+ 2-bit 2-to-1 multiplexer                              : 1
+ 2-bit 4-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <main>.
+The following registers are absorbed into counter <q1_cont>: 1 register on signal <q1_cont>.
+Unit <main> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 10
+ 2-bit adder                                           : 1
+ 28-bit adder                                          : 1
+ 3-bit adder                                           : 4
+ 3-bit adder carry in                                  : 4
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 38
+ Flip-Flops                                            : 38
+# Comparators                                          : 4
+ 3-bit comparator greater                              : 4
+# Multiplexers                                         : 9
+ 2-bit 2-to-1 multiplexer                              : 1
+ 2-bit 4-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 5
+ 8-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+-------------------
+WARNING:Xst:2677 - Node <cont_26> of sequential type is unconnected in block <main>.
+
+Optimizing unit <main> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 42
+ Flip-Flops                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 157
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 25
+#      LUT2                        : 31
+#      LUT3                        : 11
+#      LUT4                        : 3
+#      LUT5                        : 17
+#      LUT6                        : 14
+#      MUXCY                       : 25
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 42
+#      FDC                         : 29
+#      FDCE                        : 13
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 21
+#      IBUF                        : 13
+#      OBUF                        : 8
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7z020clg484-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              42  out of  106400     0%  
+ Number of Slice LUTs:                  103  out of  53200     0%  
+    Number used as Logic:               103  out of  53200     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    104
+   Number with an unused Flip Flop:      62  out of    104    59%  
+   Number with an unused LUT:             1  out of    104     0%  
+   Number of fully used LUT-FF pairs:    41  out of    104    39%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    200    11%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 42    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 1.678ns (Maximum Frequency: 596.090MHz)
+   Minimum input arrival time before clock: 1.836ns
+   Maximum output required time after clock: 0.521ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 1.678ns (frequency: 596.090MHz)
+  Total number of paths / destination ports: 542 / 55
+-------------------------------------------------------------------------
+Delay:               1.678ns (Levels of Logic = 28)
+  Source:            cont_0 (FF)
+  Destination:       cont_25 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: cont_0 to cont_25
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              1   0.232   0.279  cont_0 (cont_0)
+     INV:I->O              1   0.053   0.000  Madd_n0201[27:0]_lut<0>_INV_0 (Madd_n0201[27:0]_lut<0>)
+     MUXCY:S->O            1   0.230   0.000  Madd_n0201[27:0]_cy<0> (Madd_n0201[27:0]_cy<0>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<1> (Madd_n0201[27:0]_cy<1>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<2> (Madd_n0201[27:0]_cy<2>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<3> (Madd_n0201[27:0]_cy<3>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<4> (Madd_n0201[27:0]_cy<4>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<5> (Madd_n0201[27:0]_cy<5>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<6> (Madd_n0201[27:0]_cy<6>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<7> (Madd_n0201[27:0]_cy<7>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<8> (Madd_n0201[27:0]_cy<8>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<9> (Madd_n0201[27:0]_cy<9>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<10> (Madd_n0201[27:0]_cy<10>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<11> (Madd_n0201[27:0]_cy<11>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<12> (Madd_n0201[27:0]_cy<12>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<13> (Madd_n0201[27:0]_cy<13>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<14> (Madd_n0201[27:0]_cy<14>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<15> (Madd_n0201[27:0]_cy<15>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<16> (Madd_n0201[27:0]_cy<16>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<17> (Madd_n0201[27:0]_cy<17>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<18> (Madd_n0201[27:0]_cy<18>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<19> (Madd_n0201[27:0]_cy<19>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<20> (Madd_n0201[27:0]_cy<20>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<21> (Madd_n0201[27:0]_cy<21>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<22> (Madd_n0201[27:0]_cy<22>)
+     MUXCY:CI->O           1   0.012   0.000  Madd_n0201[27:0]_cy<23> (Madd_n0201[27:0]_cy<23>)
+     MUXCY:CI->O           0   0.012   0.000  Madd_n0201[27:0]_cy<24> (Madd_n0201[27:0]_cy<24>)
+     XORCY:CI->O           1   0.251   0.289  Madd_n0201[27:0]_xor<25> (n0201[27:0]<25>)
+     LUT2:I1->O            1   0.043   0.000  Mmux_n0116181 (n0116<25>)
+     FDC:D                    -0.001          cont_25
+    ----------------------------------------
+    Total                      1.678ns (1.109ns logic, 0.569ns route)
+                                       (66.1% logic, 33.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 223 / 51
+-------------------------------------------------------------------------
+Offset:              1.836ns (Levels of Logic = 5)
+  Source:            sw<5> (PAD)
+  Destination:       LED_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: sw<5> to LED_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.000   0.442  sw_5_IBUF (sw_5_IBUF)
+     LUT3:I0->O            2   0.043   0.546  Madd_wantS_Madd_lut<0>111 (Madd_wantS_Madd_lut<0>11)
+     LUT5:I0->O            2   0.043   0.546  Madd_wantS_Madd1 (Madd_wantS_Madd)
+     LUT5:I0->O            1   0.043   0.000  Mmux_LED[7]_state[1]_mux_82_OUT14_G (N11)
+     MUXF7:I1->O           1   0.172   0.000  Mmux_LED[7]_state[1]_mux_82_OUT14 (LED[7]_state[1]_mux_82_OUT<0>)
+     FDCE:D                   -0.001          LED_0
+    ----------------------------------------
+    Total                      1.836ns (0.301ns logic, 1.535ns route)
+                                       (16.4% logic, 83.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              0.521ns (Levels of Logic = 1)
+  Source:            LED_6 (FF)
+  Destination:       LED<6> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: LED_6 to LED<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.232   0.289  LED_6 (LED_6)
+     OBUF:I->O                 0.000          LED_6_OBUF (LED<6>)
+    ----------------------------------------
+    Total                      0.521ns (0.232ns logic, 0.289ns route)
+                                       (44.5% logic, 55.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.678|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.02 secs
+ 
+--> 
+
+Total memory usage is 458788 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

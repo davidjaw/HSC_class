@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Programing\Class\HSC_class\hw1\main.ncd
+OUTFILE=D:\Programing\Class\HSC_class\hw1\main.bit
+FAMILY=Zynq
+PART=xc7z020-3clg484
+WORKINGDIR=D:\Programing\Class\HSC_class\hw1
+LICENSE=WebPack
+USER_INFO=211116731_0_0_633
