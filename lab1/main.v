@@ -30,7 +30,7 @@ always@(posedge clk, posedge rst)
   else if(tri_cont)
     case(state)
       2'b00:
-        state <= (q1_state == 2'b10 || q1_state == 2'b11)? question_2 : question_1;
+        state <= (q1_state == 2'b11)? question_2 : question_1;
       2'b01:
         state <= (sw[7] == 1)? question_3 : question_2;
       2'b10:
@@ -51,7 +51,7 @@ always@(posedge clk, posedge rst)
     q1_cont <= 3'b0;
     LED <= 8'b00000000;
   end
-  else if(state == question_2) begin
+  else if(state == question_2 || state == question_3) begin
     case(state)
       question_2: begin
         if(btnD)
