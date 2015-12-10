@@ -39,11 +39,15 @@ always@(posedge clk, posedge rst)
 
 reg [2:0] q1_cont;
 
-wire [2:0] wantS, wantE, wantN, wantW;
+wire [2:0] wantS, wantE, wantN, wantW, warnS, warnE, warnN, warnW;
 assign wantS = (btnD && (sw[1:0] == 2'b00)) + (btnR && (sw[3:2] == 2'b00)) + (btnU && (sw[5:4] == 2'b00)) + (btnL && (sw[7:6] == 2'b00));
 assign wantE = (btnD && (sw[1:0] == 2'b01)) + (btnR && (sw[3:2] == 2'b01)) + (btnU && (sw[5:4] == 2'b01)) + (btnL && (sw[7:6] == 2'b01));
 assign wantN = (btnD && (sw[1:0] == 2'b10)) + (btnR && (sw[3:2] == 2'b10)) + (btnU && (sw[5:4] == 2'b10)) + (btnL && (sw[7:6] == 2'b10));
 assign wantW = (btnD && (sw[1:0] == 2'b11)) + (btnR && (sw[3:2] == 2'b11)) + (btnU && (sw[5:4] == 2'b11)) + (btnL && (sw[7:6] == 2'b11));
+assign warnS = (sw[1:0] == 2'b00) + (sw[3:2] == 2'b00) + (sw[5:4] == 2'b00) + (sw[7:6] == 2'b00);
+assign warnE = (sw[1:0] == 2'b01) + (sw[3:2] == 2'b01) + (sw[5:4] == 2'b01) + (sw[7:6] == 2'b01);
+assign warnN = (sw[1:0] == 2'b10) + (sw[3:2] == 2'b10) + (sw[5:4] == 2'b10) + (sw[7:6] == 2'b10);
+assign warnW = (sw[1:0] == 2'b11) + (sw[3:2] == 2'b11) + (sw[5:4] == 2'b11) + (sw[7:6] == 2'b11);
 
 always@(posedge clk, posedge rst)
   if(rst) begin
@@ -61,13 +65,13 @@ always@(posedge clk, posedge rst)
       end
       question_3: begin
           LED[0] <= (wantS == 1)? 1 : 0;
-          LED[1] <= (wantS  > 1)? 1 : 0;
+          LED[1] <= (warnS  > 1)? 1 : 0;
           LED[2] <= (wantE == 1)? 1 : 0;
-          LED[3] <= (wantE  > 1)? 1 : 0;
+          LED[3] <= (warnE  > 1)? 1 : 0;
           LED[4] <= (wantN == 1)? 1 : 0;
-          LED[5] <= (wantN  > 1)? 1 : 0;
+          LED[5] <= (warnN  > 1)? 1 : 0;
           LED[6] <= (wantW == 1)? 1 : 0;
-          LED[7] <= (wantW  > 1)? 1 : 0;
+          LED[7] <= (warnW  > 1)? 1 : 0;
       end
     endcase
   end
